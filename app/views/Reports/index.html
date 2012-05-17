@@ -6,7 +6,6 @@
         <th>EPC code</th>
         <th>location</th>
         <th>user</th>
-        <th>history</th>
     </thead>
     <tbody>
         #{list tubing, as:'tube'}
@@ -14,7 +13,6 @@
                 <td>${tube.tag.epc}</td>
                 <td>${tube.session.location.description}</td>
                 <td>${tube.session.user.fullname}</td>
-                <td>${tube.history}</td>
             </tr>
         #{/list}
     </tbody>

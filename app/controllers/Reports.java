@@ -1,6 +1,6 @@
 package controllers;
 
-import models.TubingState;
+import models.TubeState;
 import play.mvc.Controller;
 
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class Reports extends Controller {
     public static void index() {
-        List<TubingState> tubing = TubingState.findAll();
+        List<TubeState> tubing = TubeState.findAll();
         render(tubing);
     }
 }

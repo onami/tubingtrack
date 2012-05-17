@@ -3,6 +3,8 @@ package models;
 import javax.persistence.*;
 import play.db.jpa.Model;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: d_shalkhakov

@@ -23,14 +23,26 @@ public class BasicTest extends UnitTest {
     }
 
     @Test
-    public void moveTubing() {
+    public void moveTubingToDrillingArea() {
         Tag tag = Tag.find("byEpc", "abcdef").first();
         assertNotNull(tag);
-        TubingState t1 = TubingState.find("byTag", tag).first();
-        assertNotNull(t1);
 
-        assertNotNull(t1.session);
+        User drillMaster = User.find("byEmail", "drillmaster@localhost").first();
+        assertNotNull(drillMaster);
 
+        Location drillingRoom = Location.find("byDescription", "Drilling Room").first();
+        assertNotNull(drillingRoom);
+
+        Reader reader = Reader.find("byDescription", "Drilling Master's reader").first();
+        assertNotNull(reader);
+
+        Date today = Calendar.getInstance().getTime();
+        Tag[] tubing = new Tag[] { tag };
+
+        TubingTracking.track(drillMaster, drillingRoom, reader, today, tubing, Session.Status.IN_USE);
+
+        Session session = Session.find("byUser", drillMaster).first();
+        assertNotNull(session);
     }
 
 }

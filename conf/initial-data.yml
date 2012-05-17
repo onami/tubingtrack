@@ -53,40 +53,21 @@ Tag(tube3Tag):
 
 # reading sessions
 
-ReadingSession(session1):
+Session(session1):
     user: warehouseOperator
     reader: dl770
     location: warehouse
+    session: "NEW"
     date: 2012-05-10
 
-TubingState(tube1):
+TubeState(tube1):
     tag: tube1Tag
-    history: 0
     session: session1
-    status: "NEW"
 
-TubingState(tube2):
+TubeState(tube2):
     tag: tube2Tag
-    history: 0
     session: session1
-    status: "NEW"
 
-TubingState(tube3):
+TubeState(tube3):
     tag: tube3Tag
-    history: 0
     session: session1
-    status: "NEW"
-
-# tube #1 has now left the warehouse
-
-ReadingSession(session2):
-    user: drillMaster
-    reader: dl770
-    location: drillingRoom
-    date: 2012-05-15
-
-TubingState(tube1LeftWarehouse):
-    tag: tube1Tag
-    history: 1
-    session: session2
-    status: "DISPOSED"
