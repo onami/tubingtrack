@@ -17,10 +17,5 @@ public class TubingTracking {
             TubeState st = new TubeState(t, s);
             st.save();
         }
-
-        List<TubeState> states = TubeState.all().fetch();
-        for (TubeState st : states) {
-            st.refresh();
-        }
     }
 }
