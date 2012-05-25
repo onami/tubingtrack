@@ -28,46 +28,34 @@ User(warehouseOperator):
 
 Location(warehouse):
     description: Warehouse
+    number: 2
 
-Location(drillingRoom):
-    description: Drilling Room
-
-Location(factory):
-    description: Tubing Factory
+Location(well1):
+    description: Well #1
+    number: 1
 
 # readers
 
 Reader(dl770):
     description: Drilling Master's reader
 
-# tags
+# hangers
 
-Tag(tube1Tag):
-    epc: abcdef
+Hanger(hanger1):
+    destination: well1
+    length: 1040
 
-Tag(tube2Tag):
-    epc: hjklmn
-
-Tag(tube3Tag):
-    epc: oprst
-
-# reading sessions
-
-Session(session1):
-    user: warehouseOperator
-    reader: dl770
+HangerState(h1s1):
+    hanger: hanger1
+    status: NEW
     location: warehouse
-    session: "NEW"
-    date: 2012-05-10
 
-TubeState(tube1):
-    tag: tube1Tag
-    session: session1
+HangerState(h1s2):
+    hanger: hanger1
+    status: IN_TRANSIT
 
-TubeState(tube2):
-    tag: tube2Tag
-    session: session1
+HangerState(h1s2):
+    hanger: hanger1
+    status: DELIVERED
+    location: well1
 
-TubeState(tube3):
-    tag: tube3Tag
-    session: session1

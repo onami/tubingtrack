@@ -20,4 +20,8 @@ public class Reader extends Model {
     public Reader(String description) {
         this.description = description;
     }
+
+    public String toString() {
+        return description;
+    }
 }

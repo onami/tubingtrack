@@ -1,6 +1,8 @@
 package models;
 
 import javax.persistence.*;
+
+import org.hibernate.annotations.NaturalId;
 import play.db.jpa.Model;
 
 import java.util.List;
@@ -19,5 +21,9 @@ public class Location extends Model {
 
     public Location(String description) {
         this.description = description;
+    }
+
+    public String toString() {
+        return description;
     }
 }
