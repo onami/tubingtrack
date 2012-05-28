@@ -3,7 +3,6 @@ package models;
 import play.db.jpa.Model;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -25,9 +24,6 @@ public class Hanger extends Model {
 
     @ManyToOne
     public Location destination;
-
-    @Temporal(value = TemporalType.DATE)
-    public Date date;
 
     @OneToMany(mappedBy = "hanger", cascade = CascadeType.ALL)
     public List<HangerState> states;

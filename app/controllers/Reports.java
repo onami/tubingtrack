@@ -1,6 +1,9 @@
 package controllers;
 
+import models.Hanger;
 import play.mvc.Controller;
+
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,6 +14,7 @@ import play.mvc.Controller;
  */
 public class Reports extends Controller {
     public static void index() {
-        render();
+        List<Hanger> hangers = Hanger.findAll();
+        render(hangers);
     }
 }

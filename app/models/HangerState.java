@@ -2,9 +2,8 @@ package models;
 
 import play.db.jpa.Model;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.
@@ -19,6 +18,8 @@ public class HangerState extends Model {
     public Hanger hanger;
 
     public Hanger.Status status;
+    @Temporal(value = TemporalType.DATE)
+    public Date date;
 
     @ManyToOne(optional = true)
     public Location location;

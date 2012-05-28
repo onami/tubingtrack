@@ -3,17 +3,36 @@
 
 <table>
     <thead>
-        <th>EPC code</th>
-        <th>location</th>
-        <th>user</th>
+        <th>ID</th>
+        <th>Destination</th>
+        <th>Length, m</th>
+        <th>State</th>
     </thead>
     <tbody>
-    <!--    #{list tubing, as:'tube'}
+        #{list hangers, as:'hanger'}
             <tr>
-                <td>${tube.tag.epc}</td>
-                <td>${tube.session.location.description}</td>
-                <td>${tube.session.user.fullname}</td>
+                <td>${hanger.id}</td>
+                <td>${hanger.destination.description}</td>
+                <td>${hanger.length}</td>
+                <td>
+                    <table>
+                        <thead>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Location</th>
+                        </thead>
+                        <tbody>
+                            #{list hanger.states, as:'state'}
+                                <tr>
+                                    <td>${state.date}</td>
+                                    <td>${state.status}</td>
+                                    <td>${state.location.description}</td>
+                                </tr>
+                            #{/list}
+                        </tbody>
+                    </table>
+                </td>
             </tr>
-        #{/list}   -->
+        #{/list}
     </tbody>
 </table>

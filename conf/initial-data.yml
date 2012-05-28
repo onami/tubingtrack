@@ -49,13 +49,17 @@ HangerState(h1s1):
     hanger: hanger1
     status: NEW
     location: warehouse
+    date: 2012-05-20
 
 HangerState(h1s2):
     hanger: hanger1
     status: IN_TRANSIT
+    location: warehouse
+    date: 2012-05-21
 
-HangerState(h1s2):
+HangerState(h1s3):
     hanger: hanger1
     status: DELIVERED
     location: well1
+    date: 2012-05-21
 
