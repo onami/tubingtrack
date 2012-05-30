@@ -1,0 +1,22 @@
+#{extends 'main.html' /}
+<ul id="adminMenu">
+    <li class="${request.controller == 'Manage' ? 'selected' : ''}">
+        <a href="@{Manage.index()}">My data</a>
+    </li>
+    #{secure.check 'admin'}
+    <li class="${request.controller == 'Devices' ? 'selected' : ''}">
+        <a href="@{Devices.list()}">Devices</a>
+    </li>
+    <li class="${request.controller == 'Locations' ? 'selected' : ''}">
+        <a href="@{Locations.list()}">Locations</a>
+    </li>
+    <li class="${request.controller == 'Bundles' ? 'selected' : ''}">
+        <a href="@{Bundles.list()}">Bundles</a>
+    </li>
+    <li class="${request.controller == 'Users' ? 'selected' : ''}">
+        <a href="@{Users.list()}">Users</a>
+    </li>
+    #{/secure.check}
+</ul>
+
+#{doLayout /}

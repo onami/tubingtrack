@@ -17,15 +17,15 @@ public class Session extends Model {
     @ManyToOne
     public User     user;     // user who started this session
     @ManyToOne
-    public Reader   reader;   // RFID reader device that was used by the user
+    public Device device;   // RFID reader device that was used by the user
     @ManyToOne
     public Location location; // location where session took place
     @Temporal(value = TemporalType.DATE)
     public Date     date;
 
-    public Session(User user, Reader reader, Location location, Date date) {
+    public Session(User user, Device device, Location location, Date date) {
         this.user = user;
-        this.reader = reader;
+        this.device = device;
         this.location = location;
         this.date = date;
     }

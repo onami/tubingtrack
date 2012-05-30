@@ -9,7 +9,7 @@ public class BasicTest extends UnitTest {
     public void addUsers() {
         new User("dmitry@abitech.kz", "Dmitry", "mypassword").save();
 
-        User u = User.find("byFullname", "Dmitry").first();
+        User u = User.find("byName", "Dmitry").first();
         assertNotNull(u);
     }
 
@@ -22,5 +22,8 @@ public class BasicTest extends UnitTest {
         assertNotNull(drillMaster);
     }
 
+    @Test
+    public void createBundle() {
 
+    }
 }

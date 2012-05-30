@@ -2,27 +2,31 @@
 
 User(admin):
     email: admin@localhost
-    fullname: Administrator
+    name: Administrator
     password: pwd
     isAdmin: true
 
 User(drillMaster):
     email: drillmaster@localhost
-    fullname: Drill Master
+    name: Drill Master
     password: secret
     isAdmin: false
 
 User(executive):
     email: executive@localhost
-    fullname: Executive
+    name: Executive
     password: topsecret
     isAdmin: false
 
 User(warehouseOperator):
     email: warehouseop@localhost
-    fullname: Warehouse Operator
+    name: Warehouse Operator
     password: whereismystuff
     isAdmin: false
+
+# tags
+Tag(tag1):
+    epc: "abcdef"
 
 # locations
 
@@ -36,30 +40,31 @@ Location(well1):
 
 # readers
 
-Reader(dl770):
-    description: Drilling Master's reader
+Device(dl770):
+    description: Drilling Master's device
 
-# hangers
+# bundles
 
-Hanger(hanger1):
+Bundle(bundle1):
     destination: well1
     length: 1040
 
-HangerState(h1s1):
-    hanger: hanger1
+BundleState(b1s1):
+    bundle: bundle1
     status: NEW
     location: warehouse
     date: 2012-05-20
 
-HangerState(h1s2):
-    hanger: hanger1
+BundleState(b1s2):
+    bundle: bundle1
     status: IN_TRANSIT
     location: warehouse
     date: 2012-05-21
 
-HangerState(h1s3):
-    hanger: hanger1
+BundleState(b1s3):
+    bundle: bundle1
     status: DELIVERED
     location: well1
     date: 2012-05-21
+
 

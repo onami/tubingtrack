@@ -10,9 +10,9 @@
     </div>
 
     <div id="crudListTable">
-        #{crud.table fields:['id', 'date', 'destination', 'length', 'states'] }
+        #{crud.table fields:['id', 'destination', 'length', 'states'] }
             #{crud.custom 'states'}
-                <a href="@{HangerStates.list(object.states)}">States...</a>
+                <a href="@{BundleStates.list(object.states)}">States...</a>
             #{/crud.custom}
         #{/crud.table}
     </div>

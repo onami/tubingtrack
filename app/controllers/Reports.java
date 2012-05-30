@@ -1,7 +1,8 @@
 package controllers;
 
-import models.Hanger;
+import models.Bundle;
 import play.mvc.Controller;
+import play.mvc.With;
 
 import java.util.List;
 
@@ -12,9 +13,11 @@ import java.util.List;
  * Time: 16:58
  * To change this template use File | Settings | File Templates.
  */
+@With(Secure.class)
 public class Reports extends Controller {
+    @play.db.jpa.Transactional(readOnly=true)
     public static void index() {
-        List<Hanger> hangers = Hanger.findAll();
-        render(hangers);
+        List<Bundle> bundles = Bundle.findAll();
+        render(bundles);
     }
 }

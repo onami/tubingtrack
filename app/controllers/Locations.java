@@ -10,5 +10,6 @@ import play.mvc.*;
  * Time: 16:40
  * To change this template use File | Settings | File Templates.
  */
+@With(Secure.class)
 public class Locations extends CRUD {
 }

@@ -12,12 +12,12 @@ import play.db.jpa.Model;
  * RFID reader model.
  */
 @Entity
-public class Reader extends Model {
+public class Device extends Model {
     //TODO how to we identify readers?
 
     public String description;
 
-    public Reader(String description) {
+    public Device(String description) {
         this.description = description;
     }
 

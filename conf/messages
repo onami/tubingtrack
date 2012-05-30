@@ -1,7 +1,6 @@
 # You can specialize this file for each language.
 # For example, for French create a messages.fr file
-#
 
-Hanger.id name = Hanger #
-Location.id = Location #
-Location.description = Location
+secure.username=Your email:
+secure.password=Your password:
+secure.signin=Log in now

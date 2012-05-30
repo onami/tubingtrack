@@ -5,15 +5,17 @@
     <thead>
         <th>ID</th>
         <th>Destination</th>
-        <th>Length, m</th>
+        <th>Bundle Length, m</th>
+        <th>Mode</th>
         <th>State</th>
     </thead>
     <tbody>
-        #{list hangers, as:'hanger'}
+        #{list bundles, as:'bundle'}
             <tr>
-                <td>${hanger.id}</td>
-                <td>${hanger.destination.description}</td>
-                <td>${hanger.length}</td>
+                <td>${bundle.id}</td>
+                <td>${bundle.destination.description}</td>
+                <td>${bundle.length}</td>
+                <td>${bundle.mode}</td>
                 <td>
                     <table>
                         <thead>
@@ -22,7 +24,7 @@
                             <th>Location</th>
                         </thead>
                         <tbody>
-                            #{list hanger.states, as:'state'}
+                            #{list bundle.states, as:'state'}
                                 <tr>
                                     <td>${state.date}</td>
                                     <td>${state.status}</td>

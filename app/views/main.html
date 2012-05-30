@@ -11,6 +11,33 @@
         #{get 'moreScripts' /}
     </head>
     <body>
-        #{doLayout /}
+        <div id="header">
+            <div id="logo">
+                TubingTrack
+            </div>
+        </div>
+
+        <div id="main">
+            <ul id="tools">
+                <li>
+                    <a href="@{Application.index()}">Home</a>
+                </li>
+                <li>
+                    <a href="@{Manage.index()}">Manage</a>
+                </li>
+                <li>
+                    <a href="@{Reports.index()}">Reports</a>
+                </li>
+                <li>
+                    <a href="@{Secure.logout()}">Log out</a>
+                </li>
+            </ul>
+
+            #{doLayout /}
+        </div>
+
+        <p id="footer">
+            TubingTrack (c) 2012 ABiTech
+        </p>
     </body>
 </html>

@@ -2,13 +2,20 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
+*       /                                       module:secure
+
 GET     /                                       Application.index
 GET     /reports                                Reports.index
 
 GET     /favicon.ico                            404
 
+# Web Services
+GET     /services/createBundle                  404
+POST    /services/createBundle/{deviceId}       Services.createBundle
+
 # Import CRUD routes
-*      /admin                                   module:crud
+GET     /manage/?                                Manage.index
+*       /manage                                  module:crud
 
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public

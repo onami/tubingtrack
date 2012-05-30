@@ -13,19 +13,19 @@ import java.util.Date;
  * To change this template use File | Settings | File Templates.
  */
 @Entity
-public class HangerState extends Model {
+public class BundleState extends Model {
     @ManyToOne
-    public Hanger hanger;
+    public Bundle bundle;
 
-    public Hanger.Status status;
+    public Bundle.Status status;
     @Temporal(value = TemporalType.DATE)
     public Date date;
 
     @ManyToOne(optional = true)
     public Location location;
 
-    public HangerState(Hanger hanger, Hanger.Status status) {
-        this.hanger = hanger;
+    public BundleState(Bundle bundle, Bundle.Status status) {
+        this.bundle = bundle;
         this.status = status;
     }
 }

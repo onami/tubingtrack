@@ -12,19 +12,19 @@ import play.db.jpa.Model;
 @Entity
 public class User extends Model {
     public String email;
-    public String fullname;
+    public String name;
     public String password;
 
     public boolean isAdmin;
 
-    public User(String email, String fullname, String password) {
+    public User(String email, String name, String password) {
         this.email = email;
-        this.fullname = fullname;
+        this.name = name;
         this.password = password;
     }
 
-    public static User connect(String email, String password) {
-        return find("byEmailAndPassword", email, password).first();
+    public static User connect(String name, String password) {
+        return find("byNameAndPassword", name, password).first();
     }
 
     public String toString() {

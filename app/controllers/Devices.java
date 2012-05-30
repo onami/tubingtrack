@@ -10,5 +10,6 @@ import play.mvc.*;
  * Time: 16:42
  * To change this template use File | Settings | File Templates.
  */
-public class Readers extends CRUD {
+@With(Secure.class)
+public class Devices extends CRUD {
 }
