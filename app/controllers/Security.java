@@ -1,8 +1,6 @@
 package controllers;
 
 import models.User;
-import play.*;
-import play.mvc.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,10 +15,7 @@ public class Security extends Secure.Security {
     }
 
     static boolean check(String profile) {
-        if ("admin".equals(profile)) {
-            return User.find("byName", connected()).<User>first().isAdmin;
-        }
-        return false;
+        return User.find("byName", connected()).<User>first().profile.name().compareTo(profile) == 0;
     }
 
     static void onDisconnected() {

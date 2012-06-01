@@ -3,6 +3,9 @@ package models;
 import javax.persistence.*;
 import play.db.jpa.Model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Created with IntelliJ IDEA.
  * User: d_shalkhakov
@@ -15,7 +18,12 @@ public class User extends Model {
     public String name;
     public String password;
 
-    public boolean isAdmin;
+    public enum Profile {
+        BAD,
+        ADMIN
+    }
+
+    public Profile profile;
 
     public User(String email, String name, String password) {
         this.email = email;

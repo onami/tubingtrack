@@ -1,10 +1,11 @@
 # Initial database contents
 
+# users
 User(admin):
     email: admin@localhost
     name: Administrator
     password: pwd
-    isAdmin: true
+    profiles: { adminProfile }
 
 User(drillMaster):
     email: drillmaster@localhost
