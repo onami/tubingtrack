@@ -5,25 +5,22 @@ User(admin):
     email: admin@localhost
     name: Administrator
     password: pwd
-    profiles: { adminProfile }
+    profile: ADMIN
 
 User(drillMaster):
     email: drillmaster@localhost
     name: Drill Master
     password: secret
-    isAdmin: false
 
 User(executive):
     email: executive@localhost
     name: Executive
     password: topsecret
-    isAdmin: false
 
 User(warehouseOperator):
     email: warehouseop@localhost
     name: Warehouse Operator
     password: whereismystuff
-    isAdmin: false
 
 # tags
 Tag(tag1):
